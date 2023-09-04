@@ -22,7 +22,7 @@ body,
     font-size: 1rem;
 }
 
-.nav{
+.nav {
     padding: .25rem;
     background: crimson;
     text-align: left;
@@ -115,6 +115,10 @@ body,
 
             &::placeholder {
                 color: rgb(240, 240, 240);
+            }
+
+            &[disabled] {
+                pointer-events: none;
             }
         }
 

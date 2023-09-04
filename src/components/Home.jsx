@@ -86,7 +86,7 @@ export default function Home() {
             <form className={`form__send ${!validForm && "notValid"}`} onSubmit={(e) => onSubmit(e)} disabled={loading || success}>
                 <input type="text" value={name} onChange={(e) => {
                     setName(e.target.value)
-                }} placeholder="Name..." required />
+                }} placeholder="Name..." required disabled={loading || success} />
                 <button disabled={loading || success} className={`${success && "success"} ${loading && "loading"}`}>
                     {success ? "ORDER SENT!" : (loading ? "SENDING ORDER..." : "SEND ORDER")}
                 </button>

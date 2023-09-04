@@ -115,6 +115,9 @@ body,
 .form__send input::placeholder {
   color: rgb(240, 240, 240);
 }
+.form__send input[disabled] {
+  pointer-events: none;
+}
 .form__send.notValid {
   filter: grayscale(1);
 }
