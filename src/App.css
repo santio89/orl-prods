@@ -191,9 +191,6 @@ body,
 .form__send button.loading {
   color: darkgray;
 }
-.form__send button.success {
-  color: rgb(50, 50, 50);
-}
 .form__send button[disabled] {
   pointer-events: none;
 }

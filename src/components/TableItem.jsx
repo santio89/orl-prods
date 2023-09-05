@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function TableItem({ product, addItem, removeItem, editQty, orderSent }) {
+export default function TableItem({ product, addItem, removeItem, editQty, success }) {
     const [selected, setSelected] = useState(false)
     const [quantity, setQuantity] = useState(0)
 
@@ -34,8 +34,8 @@ export default function TableItem({ product, addItem, removeItem, editQty, order
     }, [quantity])
 
     useEffect(() => {
-        orderSent && setSelected(false)
-    }, [])
+        success && setSelected(false)
+    }, [success])
 
     return (
         <div className={`form__grid__row ${selected && "selected"}`} onClick={() => toggleSelected()}>

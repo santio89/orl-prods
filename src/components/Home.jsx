@@ -16,7 +16,6 @@ export default function Home() {
     const [loading, setLoading] = useState(false)
     const [name, setName] = useState("")
     const [validForm, setValidForm] = useState(false)
-    const [orderSent, setOrderSent]
 
     const addItem = (product) => {
         setItemsAdded(itemsAdded => [...itemsAdded, product])
@@ -63,7 +62,10 @@ export default function Home() {
     useEffect(() => {
         let timeout;
         if (success) {
-            timeout = setTimeout(() => setSuccess(false), 2000)
+            timeout = setTimeout(() => {
+                setSuccess(false);
+                setName("")
+            }, 2000)
         }
 
         return () => clearTimeout(timeout)
@@ -83,10 +85,6 @@ export default function Home() {
 
     }, [name, itemsAdded])
 
-    useEffect(() => {
-        orderSent && setOrderSent(false)
-    }, [orderSent])
-
     return (
         <div className='home'>
 
@@ -100,7 +98,7 @@ export default function Home() {
                 </div>
                 {
                     data.map(product =>
-                        <TableItem product={product} key={product.id} addItem={addItem} removeItem={removeItem} editQty={editQty} orderSent={orderSent} />
+                        <TableItem product={product} key={product.id} addItem={addItem} removeItem={removeItem} editQty={editQty} success={success} />
                     )
                 }
             </div>
