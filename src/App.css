@@ -121,6 +121,9 @@ body,
   -webkit-appearance: none;
   margin: 0;
 }
+.form__grid__col input[type=number].notValid, .form__grid__col--header input[type=number].notValid {
+  background-color: rgb(148, 148, 148);
+}
 .form__grid__col__qtyNumber {
   width: clamp(40px, 40px + 4vw, 80px);
   padding: 1rem;

@@ -44,7 +44,7 @@ export default function TableItem({ product, addItem, removeItem, editQty, succe
             <div className="form__grid__col">{product.desc}</div>
             <div className="form__grid__col">{product.recQty}</div>
             <div className="form__grid__col">
-                {selected ? <input value={Number(quantity).toString()} onChange={onChangeQty} onClick={e => e.stopPropagation()} type='number' required form='submitForm' min={0} max={99} /> : <span className='form__grid__col__qtyNumber'>0</span>}
+                {selected ? <input className={`${Number(quantity) === 0 && "notValid"}`} value={Number(quantity).toString()} onChange={onChangeQty} onClick={e => e.stopPropagation()} type='number' required form='submitForm' min={0} max={99} /> : <span className='form__grid__col__qtyNumber'>0</span>}
 
             </div>
         </div>

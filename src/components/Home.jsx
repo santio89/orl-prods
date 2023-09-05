@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { firebaseDb as db } from '../config/firebase'
-import { ref, set, push, child, get, remove } from "firebase/database";
+import { ref, push } from "firebase/database";
 import TableItem from './TableItem';
+import Modal from './Modal';
 
 const data = [
     { id: 1, ref: 'I', part: 'SL42126WGP', desc: 'Cam II Clip-on Quick angle 8"', recQty: 6 },
