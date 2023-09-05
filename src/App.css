@@ -69,6 +69,7 @@ body,
   grid-template-columns: repeat(5, minmax(0, 1fr));
   border-bottom: 1px solid dimgray;
   cursor: pointer;
+  line-height: 1;
 }
 .form__grid__row:has(.form__grid__col--header) {
   cursor: default;
@@ -153,6 +154,9 @@ body,
   align-items: center;
 }
 .form__send input::-moz-placeholder {
+  color: rgb(240, 240, 240);
+}
+.form__send input:-ms-input-placeholder {
   color: rgb(240, 240, 240);
 }
 .form__send input::placeholder {
