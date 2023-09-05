@@ -31,6 +31,10 @@ body,
   font-size: 0.8rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 .nav {
   padding: 0.25rem;
   background: crimson;
@@ -160,9 +164,6 @@ body,
 .form__send input::-moz-placeholder {
   color: rgb(240, 240, 240);
 }
-.form__send input:-ms-input-placeholder {
-  color: rgb(240, 240, 240);
-}
 .form__send input::placeholder {
   color: rgb(240, 240, 240);
 }
@@ -256,7 +257,6 @@ body,
   font-weight: bold;
   background: crimson;
   padding: 0.5rem;
-  cursor: pointer;
   color: rgb(248, 248, 248);
 }
 .admin-home__validation__btnContainer button:hover, .admin-home__validation__btnContainer button:focus-visible {
