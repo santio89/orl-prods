@@ -94,7 +94,7 @@ export default function Home() {
                 <div className="form__grid__row">
                     <div className="form__grid__col--header" title="Reference">REF</div>
                     <div className="form__grid__col--header" title="Part number">PART #</div>
-                    <div className="form__grid__col--header" title="Description">DESCRIPTION</div>
+                    <div className="form__grid__col--header" title="Description">DESC</div>
                     <div className="form__grid__col--header" title="Recommended quantity">REC QTY</div>
                     <div className="form__grid__col--header" title="Order quantity">QTY</div>
                 </div>

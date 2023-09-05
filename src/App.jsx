@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Home from './components/Home';
 import Nav from './components/Nav';
+import AdminView from "./components/AdminView";
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/admin" element={<AdminView />} />
           </Route>
         </Routes>
       </BrowserRouter>
