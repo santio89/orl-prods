@@ -111,7 +111,7 @@ body,
   -webkit-appearance: textfield;
           appearance: textfield;
   -moz-appearance: textfield;
-  box-shadow: 0 2px 0 0 rgb(248, 248, 248);
+  box-shadow: 0 2px 0 0 rgb(50, 50, 50);
   background-color: rgb(248, 248, 248);
   color: rgb(50, 50, 50);
   font-weight: bold;
