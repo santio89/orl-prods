@@ -161,11 +161,8 @@ body,
 .form__send input[disabled] {
   pointer-events: none;
 }
-.form__send.notValid {
+.form__send input.notValid {
   filter: grayscale(1);
-}
-.form__send.notValid button {
-  pointer-events: none;
 }
 .form__send button {
   width: 200px;
@@ -192,6 +189,10 @@ body,
   color: darkgray;
 }
 .form__send button[disabled] {
+  pointer-events: none;
+}
+.form__send button.notValid {
+  filter: grayscale(1);
   pointer-events: none;
 }
 

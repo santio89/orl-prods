@@ -78,7 +78,8 @@ export default function Home() {
             setValidForm(false)
         }
 
-        const notValidQty = itemsAdded.some(obj => obj.qty === 0)
+        const notValidQty = itemsAdded.some(obj => Number(obj.qty) === 0)
+
         if (notValidQty) {
             setValidForm(false)
         }
@@ -102,11 +103,11 @@ export default function Home() {
                     )
                 }
             </div>
-            <form id='submitForm' className={`form__send ${!validForm && "notValid"}`} onSubmit={(e) => onSubmit(e)} disabled={loading || success}>
+            <form id='submitForm' className={`form__send`} onSubmit={(e) => onSubmit(e)} disabled={loading || success}>
                 <input type="text" value={name} onChange={(e) => {
                     setName(e.target.value)
-                }} placeholder="Name..." required disabled={loading || success} />
-                <button disabled={loading || success} className={`${success && "success"} ${loading && "loading"}`}>
+                }} placeholder="Name..." required disabled={loading || success} className={`${name.trim() === "" && "notValid"}`} />
+                <button disabled={loading || success} className={`${success && "success"} ${loading && "loading"} ${!validForm && !success && "notValid"}`}>
                     {success ? "ORDER SENT!" : (loading ? "SENDING ORDER..." : "SEND ORDER")}
                 </button>
             </form>

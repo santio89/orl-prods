@@ -173,13 +173,9 @@ body,
             &[disabled] {
                 pointer-events: none;
             }
-        }
 
-        &.notValid {
-            filter: grayscale(1);
-
-            button {
-                pointer-events: none;
+            &.notValid {
+                filter: grayscale(1);
             }
         }
 
@@ -212,6 +208,11 @@ body,
             }
 
             &[disabled] {
+                pointer-events: none;
+            }
+
+            &.notValid {
+                filter: grayscale(1);
                 pointer-events: none;
             }
         }
