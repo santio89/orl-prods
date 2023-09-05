@@ -203,10 +203,6 @@ body,
                 scale: .95;
             }
 
-            &.loading {
-                color: darkgray
-            }
-
             &[disabled] {
                 pointer-events: none;
             }
@@ -218,8 +214,6 @@ body,
         }
     }
 }
-
-
 
 .selected {
     background: crimson;
