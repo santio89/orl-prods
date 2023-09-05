@@ -87,11 +87,11 @@ export default function Home() {
 
             <div className="form__grid">
                 <div className="form__grid__row">
-                    <div className="form__grid__col--header">REF</div>
-                    <div className="form__grid__col--header">PART #</div>
-                    <div className="form__grid__col--header">DESCRIPTION</div>
-                    <div className="form__grid__col--header">REC QTY</div>
-                    <div className="form__grid__col--header">QTY</div>
+                    <div className="form__grid__col--header" title="Reference">REF</div>
+                    <div className="form__grid__col--header" title="Part number">PART #</div>
+                    <div className="form__grid__col--header" title="Description">DESCRIPTION</div>
+                    <div className="form__grid__col--header" title="Recommended quantity">REC QTY</div>
+                    <div className="form__grid__col--header" title="Order quantity">QTY</div>
                 </div>
                 {
                     data.map(product =>
