@@ -74,7 +74,8 @@ export default function Home() {
                 <div className="form__grid__row">
                     <div className="form__grid__col--header">REF</div>
                     <div className="form__grid__col--header">PART #</div>
-                    <div className="form__grid__col--header">ITEM DESCRIPTION</div>
+                    <div className="form__grid__col--header">DESCRIPTION</div>
+                    <div className="form__grid__col--header">REC QTY</div>
                     <div className="form__grid__col--header">QTY</div>
                 </div>
                 {

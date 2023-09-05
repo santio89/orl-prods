@@ -58,7 +58,7 @@ body,
 
         &__row {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             border-bottom: 1px solid dimgray;
             cursor: pointer;
 
@@ -68,7 +68,7 @@ body,
         }
 
         &__col {
-            padding: 1rem .5rem;
+            padding: .5rem .25rem;
             word-wrap: break-word;
             word-break: break-all;
 
@@ -79,6 +79,10 @@ body,
             }
 
             @media(min-width: 768px) {
+                padding: 1rem .5rem;
+            }
+
+            @media(min-width: 1024px) {
                 padding: 1rem;
             }
         }
