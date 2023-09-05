@@ -1,33 +1,10 @@
 import { useState, useEffect } from 'react'
-import { firebaseDb as db } from '../config/firebase';
-import { ref, set, push, child, get, remove } from "firebase/database";
 import AdminData from './AdminData'
 
 export default function AdminView() {
     const [pass, setPass] = useState("")
     const [validAccess, setValidAccess] = useState(false)
     const [accessError, setAccessError] = useState(false)
-
-    const getData = () => {
-        get(child(ref(db), `presets/${userId}`)).then((snapshot) => {
-            if (snapshot.exists()) {
-                const presetsObj = snapshot.val()
-                presets = Object.entries(presetsObj).map((obj) => { return { docId: obj[0], ...obj[1] } })
-
-                dispatch({
-                    type: "SET_PRESETS",
-                    presets
-                })
-            }
-        }).catch((e) => {
-            console.log("error retrieving from db: ", e);
-        }).finally(() => {
-            dispatch({
-                type: "SET_PRESET_LOADER",
-                presetLoader: false
-            });
-        });
-    }
 
     const checkValidation = (e) => {
         e.preventDefault()
@@ -50,6 +27,10 @@ export default function AdminView() {
 
         return () => clearTimeout(timeout)
     }, [accessError])
+
+    useEffect(()=>{
+        document.title = 'ORL - ADMIN';
+    }, [])
 
 
     return (
