@@ -69,7 +69,6 @@ body,
   grid-template-columns: repeat(5, minmax(0, 1fr));
   border-bottom: 1px solid dimgray;
   cursor: pointer;
-  line-height: 1;
 }
 .form__grid__row:has(.form__grid__col--header) {
   cursor: default;
