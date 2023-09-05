@@ -4,10 +4,10 @@ import { ref, set, push, child, get, remove } from "firebase/database";
 import TableItem from './TableItem';
 
 const data = [
-    { id: 1, ref: 'I', part: 'SL42126WGP', desc: 'Cam II Clip-on Quick angle 8"', qty: 6 },
-    { id: 2, ref: 'J', part: 'SL45006CGP', desc: 'Micro-adjustable II Clip-on Quick angle 10"', qty: 2 },
-    { id: 3, ref: 'K', part: 'SL45006CGRP', desc: 'Micro-adjustable II Clip-on Quick angle 15"', qty: 2 },
-    { id: 4, ref: 'L', part: '60020', desc: 'T-Handle', qty: 2 }
+    { id: 1, ref: 'I', part: 'SL42126WGP', desc: 'Cam II Clip-on Quick angle 8"', recQty: 6 },
+    { id: 2, ref: 'J', part: 'SL45006CGP', desc: 'Micro-adjustable II Clip-on Quick angle 10"', recQty: 2 },
+    { id: 3, ref: 'K', part: 'SL45006CGRP', desc: 'Micro-adjustable II Clip-on Quick angle 15"', recQty: 2 },
+    { id: 4, ref: 'L', part: '60020', desc: 'T-Handle', recQty: 2 }
 ]
 
 export default function Home() {
@@ -24,6 +24,16 @@ export default function Home() {
     const removeItem = (product) => {
         const items = itemsAdded.filter(item => item.id !== product.id)
         setItemsAdded(items)
+    }
+
+    const editQty = (id, qty) => {
+        const newArray = itemsAdded.map(obj => {
+            if (obj.id === id) {
+                obj.qty = qty
+            }
+            return obj
+        })
+        setItemsAdded(newArray)
     }
 
     const onSubmit = async (e) => {
@@ -65,6 +75,11 @@ export default function Home() {
             setValidForm(false)
         }
 
+        const notValidQty = itemsAdded.some(obj => obj.qty === 0)
+        if (notValidQty) {
+            setValidForm(false)
+        }
+
     }, [name, itemsAdded])
 
     return (
@@ -80,11 +95,11 @@ export default function Home() {
                 </div>
                 {
                     data.map(product =>
-                        <TableItem product={product} key={product.id} addItem={addItem} removeItem={removeItem} />
+                        <TableItem product={product} key={product.id} addItem={addItem} removeItem={removeItem} editQty={editQty} />
                     )
                 }
             </div>
-            <form className={`form__send ${!validForm && "notValid"}`} onSubmit={(e) => onSubmit(e)} disabled={loading || success}>
+            <form id='submitForm' className={`form__send ${!validForm && "notValid"}`} onSubmit={(e) => onSubmit(e)} disabled={loading || success}>
                 <input type="text" value={name} onChange={(e) => {
                     setName(e.target.value)
                 }} placeholder="Name..." required disabled={loading || success} />
