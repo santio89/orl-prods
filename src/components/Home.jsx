@@ -17,12 +17,12 @@ export default function Home() {
     const [name, setName] = useState("")
     const [validForm, setValidForm] = useState(false)
 
-    const addItem = (id) => {
-        setItemsAdded(itemsAdded => [...itemsAdded, { id: id }])
+    const addItem = (product) => {
+        setItemsAdded(itemsAdded => [...itemsAdded, product])
     }
 
-    const removeItem = (id) => {
-        const items = itemsAdded.filter(item => item.id !== id)
+    const removeItem = (product) => {
+        const items = itemsAdded.filter(item => item.id !== product.id)
         setItemsAdded(items)
     }
 

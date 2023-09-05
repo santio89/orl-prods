@@ -10,9 +10,9 @@ export default function TableItem({ product, addItem, removeItem }) {
 
     useEffect(() => {
         if (selected) {
-            addItem(product.id)
+            addItem(product)
         } else {
-            removeItem(product.id)
+            removeItem(product)
         }
     }, [selected])
 
